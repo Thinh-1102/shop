@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 import { publicRoutes } from './routes/routes'
 import Layout from './components/Layout';
 function App() {
@@ -12,7 +11,6 @@ function App() {
                 const Page = route.component
                 return (
                   <Route key={index} path={route.path} element={<Layout><Page /></Layout>} />
-
                 )
               })
             }

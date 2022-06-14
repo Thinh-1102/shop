@@ -7,11 +7,12 @@ function HeroSlider(props) {
     const timeOut = props.timeOut? props.timeOut : 3000
     const [id,setId] = useState(0)
 
-
-    
-    const nextSlider = () => {
-        setId(id >= (data.length) - 1 ? 0: id + 1 )
-    }
+    const nextSlider = useCallback(
+        () =>  {
+            setId(id >= (data.length) - 1 ? 0: id + 1 )
+        },
+    [id,data]
+)
 
     const prevSlider = useCallback(
             () => {
@@ -23,7 +24,7 @@ function HeroSlider(props) {
     useEffect(()=>{
         if(props.auto){
             const slideAuto = setInterval(()=>{
-                nextSlider(data.length)
+                nextSlider()
             },timeOut);
             return () => {
                 clearInterval(slideAuto)

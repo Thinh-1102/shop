@@ -13,6 +13,7 @@
             left: 50%;
             transform: translateX(-50%);
             height: 100%;
+            border-radius: 7px;
 
             &:nth-child(1){
                 transform:translateX(-50%) scale(1);
@@ -47,9 +48,11 @@
     &__price{
         font-weight: 500;
         margin-bottom: 10px;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+
         &__old{
             margin-left: 5px;
+            color: $txt-second-color;
     }
         
     }

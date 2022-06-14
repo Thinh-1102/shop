@@ -1,0 +1,42 @@
+.custom-checkbox{
+    @include flex(center,flex-start);
+    cursor: pointer;
+
+    &:hover{
+        color: $primary;
+    }
+    input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    &__checkmark{
+        @include flex(center,center);
+        margin-right: 10px;
+        height: 15px;
+        width: 15px;
+        border: 1px solid $primary;
+
+        i{
+            transform: scale(0);
+            transition: transform 0.3s ease;
+        }
+    }
+
+    input:checked ~ &__checkmark{
+        background-color: $primary;
+        border-color:$primary;
+        color: $txt-while;
+    }
+
+    input:checked ~ &__checkmark > i {
+        transform: scale(1);
+    }
+
+    input:checked ~ &__label {
+        color: $primary;
+    }
+}

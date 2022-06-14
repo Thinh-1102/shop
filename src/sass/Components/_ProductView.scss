@@ -1,0 +1,216 @@
+.product{
+    @include flex(flex-start,flex-start);
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    &__img{
+        @include flex(flex-start,flex-start);
+        width: 60%;
+        flex-wrap: wrap;
+
+        @include tablet {
+            width: 80%;
+        }
+
+        @include mobile {
+            width: 100%;
+        }
+
+        &__list{
+            width: 20%;
+            flex-wrap: wrap;
+
+            &-item{
+                width: 100%;
+                margin-bottom: 15px;
+                cursor: pointer;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+        }
+        &__main{
+            flex: 1;
+            padding-left: 50px;
+            
+            img{
+                width: 100%;
+                animation:  all .5s linear;
+            }
+        }      
+    }
+
+    &-description{
+        width: 100%;
+        padding: 20px 0;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+
+        @include mobile {
+            display: none;
+        }
+
+        &-mobile{
+            display: none;
+
+            @include mobile {
+                display: block;
+            }
+        }
+
+        &.active{
+            height: max-content;
+        }
+
+        &__title{
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 14px 0;
+        }
+
+        &__content{
+            font-size: 1.6rem;
+            line-height: 2rem;
+            margin: 20px 0;
+            text-align: justify;
+        }
+
+        &__toggle{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+    }
+
+    &__info{
+        @include flex(flex-start,flex-start);
+        flex-direction: column;
+        position: sticky;
+        top: $header-shrink-height;   
+        padding-top: 24px;     
+        margin-left: 30px;
+
+        @include mobile {
+            position:relative;
+            top: unset;
+        }
+
+
+        &__item{
+            margin-bottom: 24px;
+            @include flex(center,center);
+            flex-direction: column;
+
+           
+
+            &-header{
+                font-size: 2rem;
+                font-weight: 500;
+                margin-bottom: 10px;
+
+
+            }
+
+            &-price{
+                font-weight: 400;
+                font-size: 2.2rem;
+                color: $primary;
+            }
+
+            &-content{
+                @include flex(flex-start,flex-start);
+
+                &-color,
+                &-size{
+                    @include flex(center,center);
+                    margin-left: 12px;
+                    $size:50px;
+                    width: $size;
+                    height: $size;
+                    border-radius: 50%;
+                    border: 2px solid $txt-second-color;
+                    cursor: pointer;
+
+                    @include mobile {
+                        $size:40px;
+                        width: $size;
+                        height: $size;
+                    }
+                   
+                    &:hover{
+                        border-color: $primary;
+                    }
+
+                    &.active{
+                        border-color: $primary;
+                    }
+                }
+
+                &-color{
+                    color: transparent;
+                }
+
+                &-size{
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    font-weight: 500;
+
+                    @include mobile {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                &-nav,
+                &-quaility{
+                    @include flex(center,center);
+                    font-size: 1.8rem;
+                    height: 25px;
+                    border: 1px solid $txt-second-color;
+                    padding: 10px 10px;
+                }
+
+                &-nav{
+                    &:hover{
+                        background-color: $primary;
+                        color: $txt-while;
+                        cursor: pointer;
+                        border-color: $primary;
+                    }
+                }
+
+                &-quaility{
+                    width:80px;
+                }
+            }
+        }
+
+        &__btns{
+
+            button{                
+                margin-right: 16px;
+            }
+        }
+    }
+}
+
+.cirle{
+    $size:40px;
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    text-align: center;
+    line-height: $size;
+
+    @include mobile {
+        $size:30px;
+        width: $size;
+        height: $size;
+        line-height: $size;
+    }
+}

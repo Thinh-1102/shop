@@ -1,0 +1,98 @@
+.catalog{
+    @include flex(center,space-between);
+
+    @include tablet{
+        flex-direction: column;
+    }
+
+    &__filter{
+        width: 20%;
+        margin-bottom: auto;
+
+        @include tablet {
+            height: 100vh;
+        width: max-content;
+        background-color: $main-bg;
+        padding: 1rem;
+        position: fixed;
+        left: 0;
+        top: $header-tablet-height;
+        z-index: 100;
+        box-shadow: $box-shadow;
+        transform: translate(-100%);
+        opacity: 0;
+        transition: all 0.6s linear;
+        }
+
+        @include mobile{
+            top: $header-mobile-height;
+        }
+
+        &.active{
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        &__close{
+            display: none;
+
+            @include tablet {
+                @include flex (center,center);
+                width: 35px;
+                height: 35px;
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+                background-color: $primary;
+                border-radius: 50%;
+                color: $txt-while;
+                text-align: center;
+                line-height: 35px;
+            }
+        }
+
+        &__toggle{
+            display: none;
+
+            @include tablet{
+                display: block;
+                margin-right: auto;
+                margin-bottom: 15px;
+            }
+        }
+
+        &__widget{
+            margin-bottom: 2.5rem;
+
+            &__title{
+                font-weight: 600;
+                text-transform: capitalize;
+                font-size: 1.5rem;
+                margin-bottom: 16px;
+            }
+
+            &__content {
+                color: $txt-second-color;
+
+                &__item{
+                    margin-top: 13px;
+                    
+                }
+
+                &-gotbtn{
+                    @include flex(center,center)
+                }
+        
+            }
+        }
+    }
+
+    &__content{
+        flex: 1;
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+
+}

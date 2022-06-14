@@ -9,6 +9,7 @@ import Policy from "../components/Policy"
 import Grid from "../components/Grid"
 import ProductsData from '../assets/fake-data/ProductData'
 import ProductCart from '../components/ProductCart'
+import Banner from '../assets/images/banner.png'
 function Home() {
     return ( <Helmet title="trang chủ">
         <div className="container">
@@ -70,6 +71,70 @@ function Home() {
             </SectionContent>
         </Section>
         {/* end best selling Section */}
+
+        {/* start new production Section */}
+        <Section>
+            <SectionTitle>
+                sản phẩm mới về
+            </SectionTitle>
+            <SectionContent>
+            <Grid
+                col={4}
+                mdCol={2}
+                smCol={1}
+                gap={20}
+            >
+                {ProductsData.getProducts(8).map((product,index)=>(
+                    <ProductCart
+                        key={index}
+                        img01={product.image01}
+                        img02={product.image02}
+                        title={product.title}
+                        slug={product.slug}
+                        price={Number(product.price)}
+                    />
+                ))}
+            </Grid>
+            </SectionContent>
+        </Section>
+        {/* end new production Section */}
+
+        {/* banner */}
+        <Section>
+            <SectionContent>
+                <Link to="/catalog" className="banner">
+                    <img src={Banner} alt="" />
+                </Link>
+            </SectionContent>
+        </Section>
+        {/* end banner */}
+
+        {/* start popular production Section */}
+        <Section>
+            <SectionTitle>
+                sản phẩm phổ biến
+            </SectionTitle>
+            <SectionContent>
+            <Grid
+                col={4}
+                mdCol={2}
+                smCol={1}
+                gap={20}
+            >
+                {ProductsData.getProducts(12).map((product,index)=>(
+                    <ProductCart
+                        key={index}
+                        img01={product.image01}
+                        img02={product.image02}
+                        title={product.title}
+                        slug={product.slug}
+                        price={Number(product.price)}
+                    />
+                ))}
+            </Grid>
+            </SectionContent>
+        </Section>
+        {/* end popular production Section */}
 
         </div>
         

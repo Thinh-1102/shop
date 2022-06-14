@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
-
 import {Link} from 'react-router-dom'
 
 import Button from './Button'
-
+import numberWithCommas from '../untils/numberWithCommas'
 function ProductCart(props) {
     return ( 
         <div className="product-card">
@@ -17,7 +16,7 @@ function ProductCart(props) {
                 </div>
                 <div className="product-card__price">
                     <span>
-                        {props.price}
+                        {numberWithCommas(props.price)}
                         <del className="product-card__price__old">399,999đ</del>
                     </span>
                 </div>

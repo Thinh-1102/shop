@@ -1,17 +1,16 @@
 import Header from './Header'
 import Footer from './Footer'
-
 function Layout({children}) {
     return ( 
-        <>
-            <div className="container">
-                <Header />
-                <div className="main">
-                {children}
+            <>
+                <div className="container">
+                    <Header />
+                    <div className="main">
+                    {children}
+                    </div>
                 </div>
-            </div>
-                <Footer />
-        </>
+                    <Footer />
+            </>
      );
 }
 

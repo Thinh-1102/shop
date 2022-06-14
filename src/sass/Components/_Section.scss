@@ -10,6 +10,12 @@
         text-transform: capitalize;
         text-align: center;
         font-weight: 600;
+        color: $txt-while;
+        background-color: $primary;
+        padding: 8px 12px;
+        width: 70%;
+        margin: auto;
+        border-radius: 55px;
     }
 
     &__content{
